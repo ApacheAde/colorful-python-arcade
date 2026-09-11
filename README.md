@@ -1,9 +1,11 @@
 # Colorful Python Arcade
 
-Full-colour **Python 3** mini-games written with [pygame](https://www.pygame.org/).  
-Each title is original, self-contained, and meant to be played immediately — not a console emulator.
+Full-colour **Python 3** mini-games written with [pygame](https://www.pygame.org/).
+Each title is original and self-contained.
 
-**Featured:** [https://x.com/ElbowOS](https://x.com/ElbowOS)
+**Featured on X:** [https://x.com/ElbowOS](https://x.com/ElbowOS)
+
+Repo: https://github.com/ApacheAde/colorful-python-arcade
 
 ## Games
 
@@ -15,8 +17,11 @@ Each title is original, self-contained, and meant to be played immediately — n
 | Lucky Slots | `lucky_slots.py` | Three-reel slot machine with colour symbols |
 | Neon Roulette | `neon_roulette.py` | Red / black / single-number bets and a spinning wheel |
 | Pipe Panic | `pipe_panic.py` | Flappy-style pipe runner |
+| Ruby Poker | `ruby_poker.py` | Jacks-or-better video poker |
+| Neon Memory | `neon_memory.py` | Match the neon pairs |
+| Star Blaster | `star_blaster.py` | Colour space shooter |
 
-A menu lives in `launcher.py`.
+Menu: `launcher.py`.
 
 ## Run
 
@@ -36,9 +41,11 @@ Needs Python 3.9+ and a display (pygame window).
 ## Controls
 
 - **Brick Bros** — A/D or arrows move, Space / W jump, R restart, Esc quit
-- **Blackjack / Slots / Roulette** — click the on-screen buttons
+- **Blackjack / Slots / Roulette / Poker** — click the on-screen buttons
 - **Solitaire** — click stock to draw, drag stacks, N new game
 - **Pipe Panic** — Space or click to flap
+- **Neon Memory** — click cards, N new game
+- **Star Blaster** — arrows / AD move, Space fire, R restart
 
 ## Notes
 

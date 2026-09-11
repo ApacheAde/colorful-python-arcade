@@ -7,15 +7,18 @@ import sys
 import pygame
 
 GAMES = [
-    ("Brick Bros", "A tiny Mario-style platformer", "brick_bros.py", (80, 180, 80)),
+    ("Brick Bros", "Mario-style platformer", "brick_bros.py", (80, 180, 80)),
     ("Neon Blackjack", "Casino 21 with chips", "neon_blackjack.py", (20, 90, 40)),
     ("Sunset Solitaire", "Klondike card game", "sunset_solitaire.py", (180, 70, 40)),
     ("Lucky Slots", "Three-reel slot machine", "lucky_slots.py", (140, 30, 90)),
     ("Neon Roulette", "Red / black / number bets", "neon_roulette.py", (90, 20, 20)),
     ("Pipe Panic", "Flappy-style pipe runner", "pipe_panic.py", (40, 140, 200)),
+    ("Ruby Poker", "Jacks-or-better video poker", "ruby_poker.py", (140, 20, 60)),
+    ("Neon Memory", "Match the neon pairs", "neon_memory.py", (90, 50, 180)),
+    ("Star Blaster", "Colour space shooter", "star_blaster.py", (20, 40, 110)),
 ]
 
-W, H = 900, 620
+W, H = 900, 720
 
 
 def run_game(filename):
@@ -29,8 +32,8 @@ def main():
     pygame.display.set_caption("Colorful Python Arcade")
     clock = pygame.time.Clock()
     title = pygame.font.SysFont("arial", 42, bold=True)
-    body = pygame.font.SysFont("arial", 22)
-    small = pygame.font.SysFont("arial", 16)
+    body = pygame.font.SysFont("arial", 20, bold=True)
+    small = pygame.font.SysFont("arial", 15)
     hover = -1
 
     while True:
@@ -40,7 +43,7 @@ def main():
         for i, (name, desc, file, color) in enumerate(GAMES):
             col = i % 3
             row = i // 3
-            rect = pygame.Rect(40 + col * 290, 140 + row * 210, 260, 180)
+            rect = pygame.Rect(40 + col * 290, 130 + row * 185, 260, 165)
             cards.append(rect)
             if rect.collidepoint(mx, my):
                 hover = i
@@ -59,15 +62,15 @@ def main():
                 screen = pygame.display.set_mode((W, H))
                 pygame.display.set_caption("Colorful Python Arcade")
                 title = pygame.font.SysFont("arial", 42, bold=True)
-                body = pygame.font.SysFont("arial", 22)
-                small = pygame.font.SysFont("arial", 16)
+                body = pygame.font.SysFont("arial", 20, bold=True)
+                small = pygame.font.SysFont("arial", 15)
 
         screen.fill((18, 16, 32))
-        pygame.draw.rect(screen, (40, 30, 70), (0, 0, W, 110))
+        pygame.draw.rect(screen, (40, 30, 70), (0, 0, W, 100))
         t = title.render("COLORFUL PYTHON ARCADE", True, (255, 220, 80))
-        screen.blit(t, (W // 2 - t.get_width() // 2, 22))
+        screen.blit(t, (W // 2 - t.get_width() // 2, 16))
         s = small.render("Click a game  •  ESC to quit  •  https://x.com/ElbowOS", True, (200, 180, 255))
-        screen.blit(s, (W // 2 - s.get_width() // 2, 74))
+        screen.blit(s, (W // 2 - s.get_width() // 2, 66))
 
         for i, (name, desc, file, color) in enumerate(GAMES):
             rect = cards[i]
@@ -77,7 +80,7 @@ def main():
             n = body.render(name, True, (255, 255, 255))
             d = small.render(desc, True, (240, 240, 240))
             screen.blit(n, (rect.x + 16, rect.y + 50))
-            screen.blit(d, (rect.x + 16, rect.y + 90))
+            screen.blit(d, (rect.x + 16, rect.y + 86))
 
         pygame.display.flip()
         clock.tick(60)
